@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package de.florianmichael.imguiexample;
 
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
