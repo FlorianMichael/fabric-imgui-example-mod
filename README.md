@@ -14,7 +14,8 @@ ImGuiImpl.draw(io -> {
     ImGui.showDemoWindow();
 });
 ```
-Keep in mind that ImGui needs to be initalized, so you must not remove the MinecraftClient mixin in the ImGui package
+Keep in mind that ImGui needs to be initialized, so you must not remove the MinecraftClient mixin in the ImGui package
+**The ImGuiImpl also contains a basic font loading base**
 
 ## License
 

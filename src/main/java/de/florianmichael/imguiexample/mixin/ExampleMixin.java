@@ -20,11 +20,14 @@ public class ExampleMixin {
 	@Inject(method = "render", at = @At("RETURN"))
 	private void render(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo ci) {
 		ImGuiImpl.draw(io -> {
+			// Example on how to use a custom Font
+			// ImGui.pushFont(ImGuiImpl.defaultFont);
 			if (ImGui.begin("Hello World")) {
 				ImGui.end();
 			}
 
 			ImGui.showDemoWindow();
+			// ImGui.popFont();
 		});
 	}
 }
