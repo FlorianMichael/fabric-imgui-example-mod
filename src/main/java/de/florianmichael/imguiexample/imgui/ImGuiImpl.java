@@ -65,4 +65,36 @@ public class ImGuiImpl {
 
         imGuiImplGl3.renderDrawData(ImGui.getDrawData());
     }
+
+// https://gist.github.com/FlorianMichael/b9d5ea2a4cb89c99e6da7dad68524c07
+// Can be used to load buffered images in ImGui
+//    public static int fromBufferedImage(BufferedImage image) {
+//        final int[] pixels = new int[image.getWidth() * image.getHeight()];
+//        image.getRGB(0, 0, image.getWidth(), image.getHeight(), pixels, 0, image.getWidth());
+//
+//        final ByteBuffer buffer = BufferUtils.createByteBuffer(image.getWidth() * image.getHeight() * 4);
+//
+//        for (int y = 0; y < image.getHeight(); y++) {
+//            for (int x = 0; x < image.getWidth(); x++) {
+//                final int pixel = pixels[y * image.getWidth() + x];
+//
+//                buffer.put((byte) ((pixel >> 16) & 0xFF));
+//                buffer.put((byte) ((pixel >> 8) & 0xFF));
+//                buffer.put((byte) (pixel & 0xFF));
+//                buffer.put((byte) ((pixel >> 24) & 0xFF));
+//            }
+//        }
+//
+//        buffer.flip();
+//
+//        final int texture = GlStateManager._genTexture();
+//        GlStateManager._bindTexture(texture);
+//
+//        GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_LINEAR);
+//        GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
+//
+//        GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGBA8, image.getWidth(), image.getHeight(), 0, GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, buffer);
+//
+//        return texture;
+//    }
 }
