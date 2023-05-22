@@ -9,6 +9,7 @@ import imgui.extension.implot.ImPlot;
 import imgui.flag.ImGuiConfigFlags;
 import imgui.gl3.ImGuiImplGl3;
 import imgui.glfw.ImGuiImplGlfw;
+import org.lwjgl.glfw.GLFW;
 
 public class ImGuiImpl {
     private final static ImGuiImplGlfw imGuiImplGlfw = new ImGuiImplGlfw();
@@ -51,9 +52,11 @@ public class ImGuiImpl {
         // defaultFont = generatedFonts.get(30); // Font scale is 30
         // How you can apply the font then, you can see in ExampleMixin
 
-        imGuiImplGlfw.init(handle, true);
-
         data.setConfigFlags(ImGuiConfigFlags.DockingEnable);
+        // In case you want to enable Viewports on Windows, you have to do this instead of the above line:
+        // data.setConfigFlags(ImGuiConfigFlags.DockingEnable | ImGuiConfigFlags.ViewportsEnable);
+
+        imGuiImplGlfw.init(handle, true);
         imGuiImplGl3.init();
     }
 
@@ -64,6 +67,13 @@ public class ImGuiImpl {
         ImGui.render();
 
         imGuiImplGl3.renderDrawData(ImGui.getDrawData());
+        if (ImGui.getIO().hasConfigFlags(ImGuiConfigFlags.ViewportsEnable)) {
+            final long pointer = GLFW.glfwGetCurrentContext();
+            ImGui.updatePlatformWindows();
+            ImGui.renderPlatformWindowsDefault();
+
+            GLFW.glfwMakeContextCurrent(pointer);
+        }
     }
 
 // https://gist.github.com/FlorianMichael/b9d5ea2a4cb89c99e6da7dad68524c07
