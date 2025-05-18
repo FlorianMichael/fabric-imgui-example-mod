@@ -23,7 +23,7 @@ public class MinecraftClientMixin {
         ImGuiImpl.create(window.getHandle());
     }
 
-    @Inject(method = "close", at = @At("RETURN"))
+    @Inject(method = "close", at = @At("HEAD"))
     public void closeImGui(CallbackInfo ci) {
         ImGuiImpl.dispose();
     }
