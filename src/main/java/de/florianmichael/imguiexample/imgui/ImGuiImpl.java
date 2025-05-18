@@ -101,6 +101,7 @@ public class ImGuiImpl {
 
     public static void dispose() {
         imGuiImplGl3.shutdown();
+        imGuiImplGlfw.shutdown();
 
         ImGui.destroyContext();
         ImPlot.destroyContext();
