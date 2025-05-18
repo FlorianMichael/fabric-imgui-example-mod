@@ -103,8 +103,8 @@ public class ImGuiImpl {
         imGuiImplGl3.shutdown();
         imGuiImplGlfw.shutdown();
 
-        ImGui.destroyContext();
         ImPlot.destroyContext();
+        ImGui.destroyContext();
     }
 
 // Can be used to load buffered images in ImGui
