@@ -46,7 +46,7 @@ public class ImGuiImpl {
 //            basicConfig.setGlyphRanges(data.getFonts().getGlyphRangesCyrillic());
 //
 //            final List<ImFont> generatedFonts = new ArrayList<>();
-//            for (int i = 5 /* MINIMUM_FONT_SIZE */; i < 50 /* MAXIMUM_FONT_SIZE */; i++) {
+//            for (int i = 5 /* MINIMUM_FONT_SIZE */; i <= 50 /* MAXIMUM_FONT_SIZE */; i++) {
 //                basicConfig.setName("<Font Name> " + i + "px");
 //                generatedFonts.add(fonts.addFontFromMemoryTTF(IOUtils.toByteArray(Objects.requireNonNull(ImGuiImpl.class.getResourceAsStream("<File Path>"))), i, basicConfig, glyphRanges));
 //            }
