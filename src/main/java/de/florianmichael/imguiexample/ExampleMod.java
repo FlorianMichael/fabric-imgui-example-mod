@@ -1,6 +1,10 @@
 package de.florianmichael.imguiexample;
 
+import de.florianmichael.imguiexample.screens.ExampleScreen;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.client.option.KeyBinding;
+import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,6 +13,11 @@ public class ExampleMod implements ModInitializer {
     // It is considered best practice to use your mod id as the logger's name.
     // That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("modid");
+    public static final KeyBinding EXAMPLE_KEYBINDING = new KeyBinding(
+            "key.imguiexample.example_keybinding",
+            GLFW.GLFW_KEY_RIGHT_SHIFT, // Key code
+            "key.categories.imguiexample" // Category for the keybinding
+    );
 
     @Override
     public void onInitialize() {
@@ -17,5 +26,10 @@ public class ExampleMod implements ModInitializer {
         // Proceed with mild caution.
 
         LOGGER.info("Hello Fabric world!");
+
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            if (EXAMPLE_KEYBINDING.wasPressed())
+                client.setScreen(new ExampleScreen()); // An example screen that renders using ImGui
+        });
     }
 }
