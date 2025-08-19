@@ -16,11 +16,6 @@ public final class ExampleScreen extends Screen implements RenderInterface {
     }
 
     @Override
-    public boolean shouldPause() {
-        return false; // Only relevant in singleplayer
-    }
-
-    @Override
     public void render(ImGuiIO io) {
         if (ImGui.begin("Hello, World!")) {
             ImGui.setWindowSize(800, 600);
@@ -29,6 +24,11 @@ public final class ExampleScreen extends Screen implements RenderInterface {
         }
 
         ImGui.showDemoWindow(showDemoWindow);
+    }
+
+    @Override
+    public boolean shouldPause() {
+        return false; // Only relevant in singleplayer
     }
 
 }
