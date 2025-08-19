@@ -28,7 +28,7 @@ public class ExampleMod implements ModInitializer {
 
         LOGGER.info("Hello Fabric world!");
 
-        // Ingame example with ImGui, also see ExampleMixin
+        // Ingame example with ImGui, also see GameRendererMixin
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (EXAMPLE_KEYBINDING.wasPressed()) {
                 client.setScreen(new ExampleScreen());

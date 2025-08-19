@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "ExampleMixin",
+    "GameRendererMixin",
+    "TitleScreenMixin",
     "imgui.MinecraftClientMixin"
   ],
   "injectors": {
