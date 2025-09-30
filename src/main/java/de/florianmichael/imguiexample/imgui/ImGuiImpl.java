@@ -73,7 +73,7 @@ public class ImGuiImpl {
         final Framebuffer framebuffer = MinecraftClient.getInstance().getFramebuffer();
         final int previousFramebuffer = ((GlTexture) framebuffer.getColorAttachment()).getOrCreateFramebuffer(((GlBackend) RenderSystem.getDevice()).getBufferManager(), null);
         GlStateManager._glBindFramebuffer(GL30.GL_FRAMEBUFFER, previousFramebuffer);
-        GL11.glViewport(0, 0, framebuffer.viewportWidth, framebuffer.viewportHeight);
+        GL11.glViewport(0, 0, framebuffer.textureWidth, framebuffer.textureHeight);
 
         // start frame
         imGuiImplGl3.newFrame();

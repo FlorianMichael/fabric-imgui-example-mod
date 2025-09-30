@@ -17,7 +17,7 @@ public class ExampleMod implements ModInitializer {
     public static final KeyBinding EXAMPLE_KEYBINDING = new KeyBinding(
             "key.imguiexample.example_keybinding",
             GLFW.GLFW_KEY_RIGHT_SHIFT,
-            "key.categories.imguiexample"
+            KeyBinding.Category.MISC
     );
 
     @Override
