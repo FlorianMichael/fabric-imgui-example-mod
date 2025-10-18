@@ -2,6 +2,7 @@ package de.florianmichael.imguiexample.mixin.imgui;
 
 import de.florianmichael.imguiexample.imgui.ImGuiImpl;
 import de.florianmichael.imguiexample.imgui.RenderInterface;
+import imgui.ImGui;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.render.RenderTickCounter;
@@ -22,7 +23,9 @@ public class GameRendererMixin {
     @Inject(method = "render", at = @At("RETURN"))
     private void render(RenderTickCounter tickCounter, boolean tick, CallbackInfo ci) {
         if (client.currentScreen instanceof final RenderInterface renderInterface) {
-            ImGuiImpl.draw(renderInterface);
+            ImGuiImpl.beginImGuiRendering();
+            renderInterface.render(ImGui.getIO());
+            ImGuiImpl.endImGuiRendering();
         }
     }
 
