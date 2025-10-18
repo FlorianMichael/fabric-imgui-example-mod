@@ -87,7 +87,7 @@ public class ImGuiImpl {
         ImGui.render();
         imGuiImplGl3.renderDrawData(ImGui.getDrawData());
 
-        GlStateManager._glBindFramebuffer(GL30.GL_FRAMEBUFFER, previousFramebuffer);
+        GlStateManager._glBindFramebuffer(GL30.GL_FRAMEBUFFER, 0);
 
 // Add this code if you have enabled Viewports in the create method
 //        if (ImGui.getIO().hasConfigFlags(ImGuiConfigFlags.ViewportsEnable)) {
