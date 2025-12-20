@@ -3,9 +3,9 @@ package de.florianmichael.imguiexample.mixin.imgui;
 import de.florianmichael.imguiexample.imgui.ImGuiImpl;
 import de.florianmichael.imguiexample.imgui.RenderInterface;
 import imgui.ImGui;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.render.GameRenderer;
-import net.minecraft.client.render.RenderTickCounter;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.DeltaTracker;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -18,11 +18,11 @@ public class GameRendererMixin {
 
     @Shadow
     @Final
-    private MinecraftClient client;
+    private Minecraft minecraft;
 
     @Inject(method = "render", at = @At("RETURN"))
-    private void render(RenderTickCounter tickCounter, boolean tick, CallbackInfo ci) {
-        if (client.currentScreen instanceof final RenderInterface renderInterface) {
+    private void render(DeltaTracker tickCounter, boolean tick, CallbackInfo ci) {
+        if (minecraft.screen instanceof final RenderInterface renderInterface) {
             ImGuiImpl.beginImGuiRendering();
             renderInterface.render(ImGui.getIO());
             ImGuiImpl.endImGuiRendering();

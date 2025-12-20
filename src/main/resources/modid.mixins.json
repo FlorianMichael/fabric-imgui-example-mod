@@ -1,16 +1,16 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "de.florianmichael.imguiexample.mixin",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": [
-  ],
-  "client": [
-    "imgui.GameRendererMixin",
-    "imgui.MinecraftClientMixin",
-    "TitleScreenMixin"
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  }
+	"required": true,
+	"package": "de.florianmichael.imguiexample.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"imgui.GameRendererMixin",
+		"imgui.MinecraftMixin",
+		"TitleScreenMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
 }

@@ -3,7 +3,7 @@ package de.florianmichael.imguiexample;
 import de.florianmichael.imguiexample.screens.ExampleScreen;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.KeyMapping;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,10 +14,10 @@ public class ExampleMod implements ModInitializer {
     // That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("modid");
 
-    public static final KeyBinding EXAMPLE_KEYBINDING = new KeyBinding(
+    public static final KeyMapping EXAMPLE_KEYBINDING = new KeyMapping(
             "key.imguiexample.example_keybinding",
             GLFW.GLFW_KEY_RIGHT_SHIFT,
-            KeyBinding.Category.MISC
+            KeyMapping.Category.MISC
     );
 
     @Override
@@ -30,7 +30,7 @@ public class ExampleMod implements ModInitializer {
 
         // Ingame example with ImGui, also see GameRendererMixin
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if (EXAMPLE_KEYBINDING.wasPressed()) {
+            if (EXAMPLE_KEYBINDING.consumeClick()) {
                 client.setScreen(new ExampleScreen());
             }
         });
