@@ -1,6 +1,6 @@
-package de.florianmichael.imguiexample.mixin.imgui;
+package de.florianreuth.imguiexample.mixin.imgui;
 
-import de.florianmichael.imguiexample.imgui.ImGuiImpl;
+import de.florianreuth.imguiexample.imgui.ImGuiImpl;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.main.GameConfig;
 import com.mojang.blaze3d.platform.Window;

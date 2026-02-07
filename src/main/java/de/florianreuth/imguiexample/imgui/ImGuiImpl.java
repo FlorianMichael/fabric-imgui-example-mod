@@ -1,8 +1,8 @@
 /*
- * This file is part of fabric-imgui-example-mod - https://github.com/FlorianMichael/fabric-imgui-example-mod
- * by FlorianMichael/EnZaXD and contributors
+ * This file is part of fabric-imgui-example-mod - https://github.com/florianreuth/fabric-imgui-example-mod
+ * by Florian Reuth and contributors
  */
-package de.florianmichael.imguiexample.imgui;
+package de.florianreuth.imguiexample.imgui;
 
 import com.mojang.blaze3d.opengl.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;

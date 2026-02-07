@@ -1,6 +1,6 @@
-package de.florianmichael.imguiexample.screens;
+package de.florianreuth.imguiexample.screens;
 
-import de.florianmichael.imguiexample.imgui.RenderInterface;
+import de.florianreuth.imguiexample.imgui.RenderInterface;
 import imgui.ImGui;
 import imgui.ImGuiIO;
 import imgui.type.ImBoolean;

@@ -1,6 +1,6 @@
-package de.florianmichael.imguiexample;
+package de.florianreuth.imguiexample;
 
-import de.florianmichael.imguiexample.screens.ExampleScreen;
+import de.florianreuth.imguiexample.screens.ExampleScreen;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.KeyMapping;

@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "de.florianmichael.imguiexample.mixin",
+	"package": "de.florianreuth.imguiexample.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
 		"imgui.GameRendererMixin",

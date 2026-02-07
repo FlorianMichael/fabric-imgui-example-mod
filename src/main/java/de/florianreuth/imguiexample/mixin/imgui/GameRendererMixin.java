@@ -1,7 +1,7 @@
-package de.florianmichael.imguiexample.mixin.imgui;
+package de.florianreuth.imguiexample.mixin.imgui;
 
-import de.florianmichael.imguiexample.imgui.ImGuiImpl;
-import de.florianmichael.imguiexample.imgui.RenderInterface;
+import de.florianreuth.imguiexample.imgui.ImGuiImpl;
+import de.florianreuth.imguiexample.imgui.RenderInterface;
 import imgui.ImGui;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;

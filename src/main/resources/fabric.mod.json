@@ -8,15 +8,15 @@
 		"Me!"
 	],
 	"contact": {
-		"homepage": "https://github.com/FlorianMichael/",
-		"sources": "https://github.com/FlorianMichael/fabric-imgui-example-mod"
+		"homepage": "https://github.com/florianreuth/",
+		"sources": "https://github.com/florianreuth/fabric-imgui-example-mod"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/modid/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"de.florianmichael.imguiexample.ExampleMod"
+          "de.florianreuth.imguiexample.ExampleMod"
 		]
 	},
 	"mixins": [
