@@ -1,3 +1,14 @@
+# This project is most likely end of life
+
+Mojang Studios
+has [recently announced](https://www.minecraft.net/en-us/article/another-step-towards-vibrant-visuals-for-java-edition)
+that Minecraft will transition its graphics engine from OpenGL to Vulkan.
+
+At the time of writing, the [imgui-java](https://github.com/SpaiR/imgui-java) project used by this template does not yet
+support the Vulkan graphics API (see the pull request [here](https://github.com/SpaiR/imgui-java/pull/120)). As a
+result, this
+project will most likely stop working following the release of Minecraft 26.2.
+
 # Fabric ImGui Example Mod
 
 This example contains the following features:
