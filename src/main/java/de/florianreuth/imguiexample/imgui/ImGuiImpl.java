@@ -58,7 +58,7 @@ public final class ImGuiImpl {
     public static void beginImGuiRendering() {
         // Minecraft will not bind the framebuffer unless it is needed, so do it manually and hope Vulcan never gets real:tm:
         final RenderTarget framebuffer = Minecraft.getInstance().getMainRenderTarget();
-        GlStateManager._glBindFramebuffer(GL30C.GL_FRAMEBUFFER, ((GlTexture) framebuffer.getColorTexture()).getFbo(((GlDevice) RenderSystem.getDevice()).directStateAccess(), null));
+        GlStateManager._glBindFramebuffer(GL30C.GL_FRAMEBUFFER, ((GlTexture) framebuffer.getColorTexture()).getFbo(((GlDevice) RenderSystem.getDevice().backend).directStateAccess(), null));
         GL11C.glViewport(0, 0, framebuffer.width, framebuffer.height);
 
         imGuiImplGl3.newFrame();

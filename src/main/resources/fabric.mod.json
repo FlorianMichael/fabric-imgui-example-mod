@@ -22,10 +22,11 @@
 	"mixins": [
 		"modid.mixins.json"
 	],
+	"accessWidener": "modid.accesswidener",
 	"depends": {
-		"fabricloader": ">=0.18.2",
-		"minecraft": "~1.21.11",
-		"java": ">=21",
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~26.1",
+		"java": ">=25",
 		"fabric-api": "*"
 	},
 	"suggests": {
