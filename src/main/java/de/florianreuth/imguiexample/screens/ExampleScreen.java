@@ -20,10 +20,12 @@ public final class ExampleScreen extends Screen implements RenderInterface {
         if (ImGui.begin("Hello, World!")) {
             ImGui.setWindowSize(800, 600);
             ImGui.checkbox("Show Demo Window", showDemoWindow);
-            ImGui.end();
         }
+        ImGui.end();
 
-        ImGui.showDemoWindow(showDemoWindow);
+        if (showDemoWindow.get()) {
+            ImGui.showDemoWindow(showDemoWindow);
+        }
     }
 
     @Override

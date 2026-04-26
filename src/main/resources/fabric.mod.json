@@ -27,7 +27,8 @@
 		"fabricloader": ">=0.18.4",
 		"minecraft": "~26.1",
 		"java": ">=25",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"imguimc": "*"
 	},
 	"suggests": {
 		"another-mod": "*"

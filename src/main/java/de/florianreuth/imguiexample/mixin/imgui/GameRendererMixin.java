@@ -1,8 +1,7 @@
 package de.florianreuth.imguiexample.mixin.imgui;
 
-import de.florianreuth.imguiexample.imgui.ImGuiImpl;
 import de.florianreuth.imguiexample.imgui.RenderInterface;
-import imgui.ImGui;
+import foundry.imgui.api.ImGuiMC;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.DeltaTracker;
@@ -23,9 +22,11 @@ public class GameRendererMixin {
     @Inject(method = "render", at = @At("RETURN"))
     private void render(DeltaTracker tickCounter, boolean tick, CallbackInfo ci) {
         if (minecraft.screen instanceof final RenderInterface renderInterface) {
-            ImGuiImpl.beginImGuiRendering();
-            renderInterface.render(ImGui.getIO());
-            ImGuiImpl.endImGuiRendering();
+            try (ImGuiMC.ActiveContext context = ImGuiMC.withImGui()) {
+                if (context != null) {
+                    renderInterface.render(context.io());
+                }
+            }
         }
     }
 
